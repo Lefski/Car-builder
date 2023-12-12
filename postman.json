@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "2b613b82-3cad-4ae2-9efa-7d684586d6bb",
+		"name": "Car-builder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27052352",
+		"_collection_link": "https://solar-spaceship-58974.postman.co/workspace/Practicum-filmorate~60362f94-0045-489a-bfb3-bf04644d1b6e/collection/27052352-2b613b82-3cad-4ae2-9efa-7d684586d6bb?action=share&source=collection_link&creator=27052352"
+	},
+	"item": [
+		{
+			"name": "getAllCarWheels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/wheels"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllCarBody",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/body"
+			},
+			"response": []
+		},
+		{
+			"name": "createCar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"wheelId\": 1,\r\n  \"wheelsAmount\": 4,\r\n  \"bodyId\": 2,\r\n  \"name\": \"Lada Kalina\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/cars"
+			},
+			"response": []
+		},
+		{
+			"name": "getCars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/cars"
+			},
+			"response": []
+		},
+		{
+			"name": "get car by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/cars/1"
+			},
+			"response": []
+		}
+	]
+}
