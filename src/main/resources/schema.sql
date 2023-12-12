@@ -39,5 +39,5 @@ create table if not exists cars
     name          varchar(255)                                        not null,
     wheels_id     bigint references wheels (id)                       not null,
     wheels_amount integer                                             not null,
-    bodies_id     bigint references bodies (id)                       not null
+    body_id     bigint references bodies (id)                       not null
 );
