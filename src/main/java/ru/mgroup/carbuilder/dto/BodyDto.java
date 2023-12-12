@@ -12,4 +12,12 @@ public class BodyDto {
 
     private Long id;
     private BodiesType bodiesType;
+
+    @Override
+    public String toString() {
+        return "BodyDto{" +
+                "id=" + id +
+                ", bodiesType=" + bodiesType +
+                '}';
+    }
 }

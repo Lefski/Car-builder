@@ -19,4 +19,13 @@ public class CarDto {
 
     private BodyDto body;
 
+    @Override
+    public String toString() {
+        return "CarDto{" +
+                "id=" + id +
+                ", wheelDto=" + wheelDto +
+                ", wheelsAmount=" + wheelsAmount +
+                ", body=" + body +
+                '}';
+    }
 }

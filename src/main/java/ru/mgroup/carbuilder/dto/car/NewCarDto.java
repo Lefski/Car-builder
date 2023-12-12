@@ -1,10 +1,7 @@
 package ru.mgroup.carbuilder.dto.car;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.*;
 import lombok.*;
-import jakarta.validation.constraints.Size;
 
 @Getter
 @Setter
@@ -19,7 +16,8 @@ public class NewCarDto {
 
     @NotNull (message = "wheelsAmount may not be null")
     @Positive (message = "wheelAmount may not be negative or zero")
-    private Long wheelsAmount;
+    @Min(value = 2, message = "car needs at least 2 wheels to be created")
+    private Integer wheelsAmount;
 
     @NotNull (message = "bodyId may not be null")
     @Positive (message = "bodyId may not be negative or zero")
@@ -27,7 +25,7 @@ public class NewCarDto {
 
     @NotBlank(message = "car name may not be null or blank")
     @Size(min = 1, max = 255)
-    private Long name;
+    private String name;
 
     @Override
     public String toString() {

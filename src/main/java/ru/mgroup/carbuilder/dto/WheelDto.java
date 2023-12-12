@@ -13,4 +13,11 @@ public class WheelDto {
     private Long id;
     private WheelsSize wheelsSize;
 
+    @Override
+    public String toString() {
+        return "WheelDto{" +
+                "id=" + id +
+                ", wheelsSize=" + wheelsSize +
+                '}';
+    }
 }
