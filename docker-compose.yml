@@ -1,0 +1,22 @@
+version: '3.1'
+services:
+  main-server:
+    build: .
+    container_name: main-server-container
+    ports:
+      - "8080:8080"
+    depends_on:
+      - carbuilder-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://carbuilder-db:5432/carbuilder
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+
+  carbuilder-db:
+    image: postgres:14-alpine
+    container_name: carbuilder-db-container
+    environment:
+      - POSTGRES_DB=carbuilder
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
