@@ -1,8 +1,8 @@
 package ru.mgroup.carbuilder.dto.car;
 
 import lombok.*;
+import ru.mgroup.carbuilder.dto.BodyDto;
 import ru.mgroup.carbuilder.dto.WheelDto;
-import ru.mgroup.carbuilder.model.Body;
 
 @Getter
 @Setter
@@ -17,6 +17,6 @@ public class CarDto {
 
     private Integer wheelsAmount;
 
-    private Body body;
+    private BodyDto body;
 
 }
