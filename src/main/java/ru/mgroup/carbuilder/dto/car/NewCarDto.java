@@ -29,5 +29,13 @@ public class NewCarDto {
     @Size(min = 1, max = 255)
     private Long name;
 
-
+    @Override
+    public String toString() {
+        return "NewCarDto{" +
+                "wheelId=" + wheelId +
+                ", wheelsAmount=" + wheelsAmount +
+                ", bodyId=" + bodyId +
+                ", name=" + name +
+                '}';
+    }
 }
