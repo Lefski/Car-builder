@@ -16,6 +16,8 @@ import ru.mgroup.carbuilder.dto.car.CarDto;
 import ru.mgroup.carbuilder.dto.car.NewCarDto;
 import ru.mgroup.carbuilder.service.Service;
 
+import java.util.List;
+
 @RestController
 @Validated
 @Slf4j
@@ -26,30 +28,32 @@ public class Controller {
     private final Service service;
 
     @GetMapping("wheels")
-    ResponseEntity<Page<WheelDto>> getAllCarWheels(
+    ResponseEntity<List<WheelDto>> getAllCarWheels(
             @RequestParam(required = false, defaultValue = "0") @PositiveOrZero Integer page,
             @RequestParam(required = false, defaultValue = "10") @PositiveOrZero Integer size
     ) {
         log.info("Принят запрос на получение всех колес, page:{}, size{}", page, size);
-        return ResponseEntity.ok(service.getAllCarWheels(PageRequest.of(page, size)));
+        return ResponseEntity.ok(service.getAllCarWheels(PageRequest.of(page, size)).toList());
+
+
     }
 
     @GetMapping("body")
-    ResponseEntity<Page<BodyDto>> getAllCarBody(
+    ResponseEntity<List<BodyDto>> getAllCarBody(
             @RequestParam(required = false, defaultValue = "0") @PositiveOrZero Integer page,
             @RequestParam(required = false, defaultValue = "10") @PositiveOrZero Integer size
     ) {
         log.info("Принят запрос на получение всех корпусов, page:{}, size{}", page, size);
-        return ResponseEntity.ok(service.getAllCarBody(PageRequest.of(page, size)));
+        return ResponseEntity.ok(service.getAllCarBody(PageRequest.of(page, size)).toList());
     }
 
     @GetMapping("cars")
-    ResponseEntity<Page<CarDto>> getCars(
+    ResponseEntity<List<CarDto>> getCars(
             @RequestParam(required = false, defaultValue = "0") @PositiveOrZero Integer page,
             @RequestParam(required = false, defaultValue = "10") @PositiveOrZero Integer size
     ) {
         log.info("Принят запрос на получение всех машин, page:{}, size{}", page, size);
-        return ResponseEntity.ok(service.getCars(PageRequest.of(page, size)));
+        return ResponseEntity.ok(service.getCars(PageRequest.of(page, size)).toList());
     }
 
     @GetMapping("cars/{carId}")

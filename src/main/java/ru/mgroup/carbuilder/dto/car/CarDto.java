@@ -19,6 +19,8 @@ public class CarDto {
 
     private BodyDto body;
 
+    private String name;
+
     @Override
     public String toString() {
         return "CarDto{" +
@@ -26,6 +28,7 @@ public class CarDto {
                 ", wheelDto=" + wheelDto +
                 ", wheelsAmount=" + wheelsAmount +
                 ", body=" + body +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

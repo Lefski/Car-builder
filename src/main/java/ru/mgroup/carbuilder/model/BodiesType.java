@@ -17,4 +17,12 @@ public class BodiesType {
 
     @Column(name = "type_name")
     private String typeName;
+
+    @Override
+    public String toString() {
+        return "BodiesType{" +
+                "id=" + id +
+                ", typeName='" + typeName + '\'' +
+                '}';
+    }
 }

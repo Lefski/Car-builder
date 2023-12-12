@@ -19,4 +19,12 @@ public class WheelsSize {
 
     @Column(name = "size_name")
     private String sizeName;
+
+    @Override
+    public String toString() {
+        return "WheelsSize{" +
+                "id=" + id +
+                ", sizeName='" + sizeName + '\'' +
+                '}';
+    }
 }

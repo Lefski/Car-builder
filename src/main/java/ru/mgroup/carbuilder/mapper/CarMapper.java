@@ -16,6 +16,7 @@ public class CarMapper {
                 .body(bodyDto)
                 .wheelDto(wheelDto)
                 .wheelsAmount(car.getWheelsAmount())
+                .name(car.getName())
                 .build();
     }
 
